@@ -1,4 +1,4 @@
-// Copyright 2020 Your Name <your_email>
+// Copyright 2020 Evgeniy Grigorev <your_email>
 
 #ifndef INCLUDE_BASESTACK_HPP_
 #define INCLUDE_BASESTACK_HPP_
