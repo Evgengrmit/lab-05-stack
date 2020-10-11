@@ -24,8 +24,8 @@ void NonCopiedStack<T>::push(T &&value) {
       std::is_copy_assignable<T>::value) {
     throw std::bad_typeid();
   }
-  auto *prev = BS::head_;
-  BS::head_ = new Element<T>{std::forward<T>(value), prev};
+  auto *newElement = new Element<T>{std::forward<T>(value), BS::head_};
+  BS::head_ = newElement;
 }
 
 template <typename T>
@@ -47,8 +47,7 @@ void NonCopiedStack<T>::push_emplace(Args &&... value) {
       std::is_copy_assignable<T>::value) {
     throw std::bad_typeid();
   }
-
-  auto *prev = BS::head_;
-  BS::head_ = new Element<T>{{std::forward<Args>(value)...}, prev};
+  auto *newElement = new Element<T>{{std::forward<Args>(value)...}, BS::head_};
+  BS::head_ = newElement;
 }
 #endif  // INCLUDE_NONCOPIEDSTACK_HPP_

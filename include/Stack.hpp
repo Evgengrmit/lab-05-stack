@@ -15,8 +15,8 @@ class Stack : public BaseStack<T> {
 
 template <typename T>
 void Stack<T>::push(const T &value) {
-  auto *current = new Element<T>{value, BS::head_};
-  BaseStack<T>::head_ = current;
+  auto *newElement = new Element<T>{value, BS::head_};
+  BaseStack<T>::head_ = newElement;
 }
 
 template <typename T>
